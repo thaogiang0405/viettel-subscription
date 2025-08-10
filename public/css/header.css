@@ -1,0 +1,89 @@
+.navbar {
+  padding-top: 0.3rem !important;
+  padding-bottom: 0.3rem !important;
+}
+
+/* Giảm độ cao link trong menu */
+.navbar-nav .nav-link {
+  padding-top: 0.7rem !important;
+  padding-bottom: 0.7rem !important;
+  font-size: 0.95rem; /* Giảm cỡ chữ nếu cần */
+}
+
+/* Giảm chiều cao logo */
+.navbar-brand .fs-4 {
+  font-size: 1.1rem !important;
+}
+
+
+.nav-item.dropdown .dropdown-item:hover {
+  background-color: #0b0b0b;
+  color: #dc3545;
+}
+
+
+.navbar-brand span {
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  z-index: 9999 !important;
+}
+
+.nav-item.dropdown .dropdown-menu {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-item.dropdown .dropdown-item {
+  font-weight: 500;
+  color: #333;
+}
+
+
+/* Toggle button */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Scroll effect */
+.navbar-light {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Topbar small text and icons */
+.bg-dark small {
+  font-weight: 500;
+}
+
+.bg-dark a:hover {
+  color: #dc3545;
+}
+
+/* Responsive spacing fix */
+@media (max-width: 992px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-collapse {
+    margin-top: 15px;
+  }
+
+  .d-flex.gap-2 {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+
+/* Lịch sử icon spacing */
+img[alt="Lịch sử"] {
+  vertical-align: middle;
+}
