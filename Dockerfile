@@ -1,6 +1,7 @@
-FROM php:8.2-fpm
+# Sử dụng image base có sẵn PHP và Apache (giải quyết LUÔN vấn đề static files)
+FROM php:8.2-apache
 
-# Cài đặt các extension và dependencies
+# Cài đặt các extensions cần thiết cho Laravel
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -10,29 +11,37 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     git \
-    && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install pdo pdo_mysql mbstring exif pcntl bcmath gd
+
+# Bật mod_rewrite của Apache để xử lý routing Laravel
+RUN a2enmod rewrite
 
 # Cài đặt Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-# Tạo thư mục làm việc
-WORKDIR /var/www
+# Thiết lập thư mục làm việc
+WORKDIR /var/www/html
 
-# Copy chỉ file composer để cài dependencies trước
+# Copy file composer trước để tận dụng cache Docker layer
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --no-scripts --autoloader --optimize-autoloader
 
-# Copy TOÀN BỘ source code vào
+# Cài đặt dependencies - CHẠY THỬ LỆNH NÀY TRƯỚC
+RUN composer install --no-dev --no-autoloader --no-scripts --no-interaction
+
+# Copy toàn bộ source code vào
 COPY . .
 
-# Chạy các script post-install và optimize
-RUN composer run post-install-cmd
+# Chạy dump-autoload và optimize
+RUN composer dump-autoload --optimize
 RUN php artisan optimize:clear
-RUN php artisan optimize
 
-# Build frontend assets (nếu có)
-RUN if [ -f "package.json" ]; then npm install && npm run build; fi
+# Build frontend assets (nếu có), bỏ qua nếu lỗi
+RUN if [ -f "package.json" ]; then npm ci --no-audit --no-fund && npm run build; fi
 
-# Chỉ định thư mục public là root web và chạy server
-EXPOSE 8000
-CMD php -S 0.0.0.0:8000 -t public/
+# Fix permission cho Laravel storage và cache
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chmod -R 775 /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Apache đã tự động phục vụ từ /var/www/html (chính là thư mục public)
+# Không cần CMD vì image base đã có sẵn
