@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: viettel-real # Thay bằng tên bạn muốn
+    env: php
+    plan: free # Hoặc paid nếu bạn dùng
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      php artisan optimize:clear
+      php artisan optimize
+      php artisan storage:link
+    startCommand: |
+      if [ -z "$CI" ]; then 
+        php artisan migrate --force; 
+      fi
+      php artisan serve --host=0.0.0.0 --port=8000
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      # Render sẽ tự inject APP_KEY từ bạn nếu bạn đã khai báo trong Dashboard
+      # Quan trọng: Khai báo tất cả biến môi trường khác (DB_*, MAIL_*) trong Dashboard > Service > Environment của bạn trên Render.com
+    staticPublishPath: public # Dòng này quan trọng: Nó bảo Render publish các file trong 'public' ra CDN

@@ -26,9 +26,6 @@
     <link href="{{ asset('lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
 
-    <!-- Template Styles -->
- 
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Your Custom Styles (always put at the end so they override defaults) -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
