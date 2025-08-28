@@ -1,9 +1,6 @@
 FROM php:8.2-fpm
 
-# Cài composer
-COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
-
-# Cài các extension Laravel cần
+# Cài đặt các extension và dependencies
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -15,16 +12,27 @@ RUN apt-get update && apt-get install -y \
     git \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-# Copy toàn bộ project vào container
+# Cài đặt Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
+# Tạo thư mục làm việc
 WORKDIR /var/www
+
+# Copy chỉ file composer để cài dependencies trước
+COPY composer.json composer.lock ./
+RUN composer install --no-dev --no-scripts --autoloader --optimize-autoloader
+
+# Copy TOÀN BỘ source code vào
 COPY . .
 
-# Cài dependencies Laravel
-RUN composer install --no-dev --optimize-autoloader
+# Chạy các script post-install và optimize
+RUN composer run post-install-cmd
+RUN php artisan optimize:clear
+RUN php artisan optimize
 
-# Build frontend nếu có Vite
-RUN npm install && npm run build || true
+# Build frontend assets (nếu có)
+RUN if [ -f "package.json" ]; then npm install && npm run build; fi
 
-# Mở port và chạy server
+# Chỉ định thư mục public là root web và chạy server
 EXPOSE 8000
-CMD php artisan serve --host 0.0.0.0 --port 8000
+CMD php -S 0.0.0.0:8000 -t public/
