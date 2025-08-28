@@ -27,7 +27,7 @@
     <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
 
     <!-- Template Styles -->
-    <link href="css/style.css" rel="stylesheet">
+ 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Your Custom Styles (always put at the end so they override defaults) -->
