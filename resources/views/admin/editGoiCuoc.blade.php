@@ -13,8 +13,8 @@
 
 <link rel="stylesheet" href="{{asset('assets/plugins/morrisjs/morris.min.css')}}" />
 <!-- Custom Css -->
- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}">
+ <link href="/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.min.css">
   <style>
     /* Tùy chỉnh nhẹ cho form */
     .modal-content {

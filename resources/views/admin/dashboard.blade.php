@@ -15,8 +15,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{asset('assets/plugins/morrisjs/morris.min.css')}}" />
 <!-- Custom Css -->
- <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-<link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}">
+ <link href="/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.min.css">
 <style>
     
 </style>

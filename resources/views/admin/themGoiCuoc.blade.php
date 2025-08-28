@@ -11,9 +11,9 @@
 <title>:: Aero Bootstrap4 Admin :: Project List</title>
 <!-- Favicon-->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
 <!-- Custom Css -->
-<link rel="stylesheet" href="assets/css/style.min.css">
+<link rel="stylesheet" href="/assets/css/style.min.css">
 <style>
     .modal-content {
   border-radius: 12px;
