@@ -150,7 +150,7 @@
         </td>
         <td>{{ $goi->pbh }}</td>
         <td>
-         <button class="btn btn-danger px-4 rounded-2 fw-bold btn-dangky" data-bs-toggle="modal"
+         <button class="btn btn-danger fw-bold rounded-2 btn-dangky" data-bs-toggle="modal"
              data-bs-target="#registerModal"  data-id="{{ $goi->id }}" data-goi="{{ $goi->ten_goi }}">Đăng ký
           </button>
         </td>
@@ -193,7 +193,7 @@
         </td>
         <td>{{ $goi->pbh }}</td>
         <td>
-          <button class="btn btn-danger px-4 rounded-2 fw-bold btn-dangky" data-bs-toggle="modal"
+          <button class="btn btn-danger fw-bold rounded-2 btn-dangky" data-bs-toggle="modal"
              data-bs-target="#registerModal"  data-id="{{ $goi->id }}" data-goi="{{ $goi->ten_goi }}">Đăng ký
           </button>
         </td>
@@ -237,7 +237,7 @@
         </td>
         <td>{{ $goi->pbh }}</td>
         <td>
-          <button class="btn btn-danger px-4 rounded-2 fw-bold btn-dangky" data-bs-toggle="modal"
+          <button class="btn btn-danger fw-bold rounded-2 btn-dangky" data-bs-toggle="modal"
              data-bs-target="#registerModal"  data-id="{{ $goi->id }}" data-goi="{{ $goi->ten_goi }}">Đăng ký
           </button>
         </td>

@@ -31,9 +31,9 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <!-- Your Custom Styles (always put at the end so they override defaults) -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/header.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/header.css" rel="stylesheet">
+    <link href="/css/dashboard.css" rel="stylesheet">
     
 
     <style>
