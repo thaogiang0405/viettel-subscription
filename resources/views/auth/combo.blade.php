@@ -27,11 +27,13 @@
 }
 
 .table-wrap {
-  width: 100%;
+  width: 100%;              /* chỉ chiếm 90% màn hình */
+  max-width: 1100px;       /* không vượt quá 1000px */
+  margin: 0 auto 30px;     /* căn giữa */
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin-bottom: 20px;
 }
+
 
 /* Bảng chính */
 .v-table {
@@ -118,8 +120,8 @@
 @endif
 <div class="bang-goi">
 {{-- Gói ngắn ngày --}}
-<h3>Gói ngắn ngày</h3>
 <div class="table-wrap">
+  <h3>Gói ngắn ngày</h3>
   <table class="v-table">
     <thead>
       <tr>
@@ -161,8 +163,8 @@
 </div>
 
 {{-- Gói tháng --}}
-<h3>Gói tháng</h3>
 <div class="table-wrap">
+  <h3>Gói tháng</h3>
   <table class="v-table">
     <thead>
       <tr>
@@ -204,8 +206,8 @@
 </div>
 
 {{-- Gói dài ngày --}}
-<h3>Gói dài ngày</h3>
 <div class="table-wrap">
+  <h3>Gói dài ngày</h3>
   <table class="v-table">
     <thead>
   <tr>

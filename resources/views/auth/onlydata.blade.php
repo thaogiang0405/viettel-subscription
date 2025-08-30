@@ -55,6 +55,17 @@
       margin: 0 auto;
     }
 
+   .btn-dangky {
+  font-size: 14px;      /* chữ vừa phải */
+  padding: 5px 15px;    /* giảm khoảng trống */
+  white-space: nowrap;  /* ép chữ không xuống dòng */
+}
+
+.btn-dangky:hover {
+  background-color: #c9002b;
+}
+
+
     .v-table {
       width: 100%;
       border-collapse: collapse;
@@ -98,9 +109,19 @@
       color: #999;
       width: 100%;
     }
-    .bang-goi {
-      margin-left: clamp(8px, 4vw, 50px);
-      margin-right: clamp(8px, 4vw, 50px);
+   .bang-goi {
+      margin: 0 auto; /* căn giữa */
+      max-width: 1100px; /* bảng không vượt quá 1100px */
+      padding: 0 15px; /* chừa khoảng cách 2 bên cho đẹp */
+    }
+
+    .v-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     @media (max-width: 600px) {
@@ -146,7 +167,7 @@
           <td class="v-uu-dai">{{ Str::limit($goi->uu_diem, 100) }}</td>
           <td>{{ $goi->pbh }}</td>
           <td>
-         <button class="btn btn-danger px-4 rounded-2 fw-bold btn-dangky" data-bs-toggle="modal"
+         <button class="btn btn-danger fw-bold rounded-2 btn-dangky" data-bs-toggle="modal"
              data-bs-target="#registerModal"  data-id="{{ $goi->id }}" data-goi="{{ $goi->ten_goi }}">Đăng ký
           </button>
         </td>
@@ -187,7 +208,7 @@
           <td class="v-uu-dai">{{ Str::limit($goi->uu_diem, 100) }}</td>
           <td>{{ $goi->pbh }}</td>
           <td>
-         <button class="btn btn-danger px-4 rounded-2 fw-bold btn-dangky" data-bs-toggle="modal"
+         <button class="btn btn-danger fw-bold rounded-2 btn-dangky" data-bs-toggle="modal"
              data-bs-target="#registerModal"  data-id="{{ $goi->id }}" data-goi="{{ $goi->ten_goi }}">Đăng ký
           </button>
         </td>
@@ -228,7 +249,7 @@
           <td class="v-uu-dai">{{ Str::limit($goi->uu_diem, 100) }}</td>
           <td>{{ $goi->pbh }}%</td>
           <td>
-         <button class="btn btn-danger px-4 rounded-2 fw-bold btn-dangky" data-bs-toggle="modal"
+         <button class="btn btn-danger fw-bold rounded-2 btn-dangky" data-bs-toggle="modal"
              data-bs-target="#registerModal"  data-id="{{ $goi->id }}" data-goi="{{ $goi->ten_goi }}">Đăng ký
           </button>
         </td>

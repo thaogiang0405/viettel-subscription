@@ -7,12 +7,12 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 <style>
-    .image-anh-size, .image-anh-size1 {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
+   .image-anh-size {
+    width: 100%;
+    aspect-ratio: 1/1;  /* Tạo ảnh vuông, luôn full cột */
+    object-fit: cover;  /* Cắt ảnh nhưng vẫn giữ tỉ lệ */
+    border-radius: 8px;
+}
 </style>
 </head>
 <body>

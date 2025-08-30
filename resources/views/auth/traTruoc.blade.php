@@ -99,9 +99,10 @@
       width: 100%;
     }
     .bang-goi {
-      margin-left: clamp(8px, 4vw, 50px);
-      margin-right: clamp(8px, 4vw, 50px);
-    }
+  margin: 0 auto; /* căn giữa */
+  max-width: 1100px; /* bảng không vượt quá 1100px */
+  padding: 0 15px; /* chừa khoảng cách 2 bên cho đẹp */
+}
 
     @media (max-width: 600px) {
       .v-table { min-width: 700px; }
