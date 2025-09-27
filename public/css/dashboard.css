@@ -1,4 +1,7 @@
 
+
+
+
 .banner-box {
   border-radius: 16px;
   overflow: hidden; 
@@ -268,42 +271,60 @@ p, li {
 }
 
 /* Nút Đăng ký */
+.goi-btns {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* hoặc 16px nếu bạn muốn rộng hơn */
+  margin-top: 10px;
+}
 .btn-dangky {
-    border: 2px solid #D80027;
-    background: transparent;
-    color: #D80027;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: 0.3s;
+  border: 2px solid #D80027;
+  background: #fff;
+  color: #D80027;
+  padding: 6px 24px;
+  border-radius: 24px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+  box-sizing: border-box;
 }
 
 .btn-dangky:hover {
-    background-color: #D80027;
-    color: white;
+  background: #D80027;
+  color: #fff;
 }
 
 /* Nút Chi tiết có icon ➤ */
 .btn-chitiet {
-    background: none;
-    color: #333;
-    border: none;
-    padding: 6px 12px;
-    font-weight: 500;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    position: relative;
+  background: none;
+  color: #333;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.18s;
 }
 
 .btn-chitiet::after {
-    content: '➤';
-    font-size: 0.9rem;
-    margin-left: 4px;
+  content: '➤';
+  font-size: 1.1rem;
+  margin-left: 4px;
+  color: #D80027;
+  display: inline-block;
+  transform: translateY(1px);
+}
+.btn-chitiet:hover {
+  color: #D80027;
+}
+.goi-btns, .btn-dangky {
+  margin-bottom: 12px; 
+  margin-top: 10px;    
 }
 
-/* Bỏ dòng "HOT" vì đã có style mới */
 .goi-label {
     display: none;
 }
+

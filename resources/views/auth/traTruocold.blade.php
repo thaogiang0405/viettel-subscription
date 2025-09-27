@@ -32,10 +32,7 @@
 
     <!-- Your Custom Styles (always put at the end so they override defaults) -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/header.css" rel="stylesheet">
     <link href="/css/dashboard.css" rel="stylesheet">
-    
-
     <style>
 #resultOverlay {
   position: fixed;
