@@ -101,7 +101,6 @@ Route::post('/otp', [RegisterController::class, 'verifyOtp'])->name('otp.verify'
 Route::post('/otp/resend', [RegisterController::class, 'resendOtp'])->name('otp.resend');
 Route::view('/about', 'auth.about')->name('about');
 
-
 Route::get('/thanhtoan', [PaymentController::class, 'index'])->name('thanhtoan');
 Route::post('/thanhtoan', [PaymentController::class, 'process'])->name('thanhtoan.process');
 
